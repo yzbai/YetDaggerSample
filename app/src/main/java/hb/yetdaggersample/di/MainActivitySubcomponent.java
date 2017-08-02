@@ -2,7 +2,7 @@ package hb.yetdaggersample.di;
 
 import dagger.Subcomponent;
 import dagger.android.AndroidInjector;
-import hb.yetdaggersample.MainActivity;
+import hb.yetdaggersample.ui.MainActivity;
 
 /**
  * Created by Yuzhao on 8/2/2017.

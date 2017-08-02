@@ -1,4 +1,4 @@
-package hb.yetdaggersample.base;
+package hb.yetdaggersample;
 
 import android.app.Activity;
 import android.app.Application;
@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
+import hb.yetdaggersample.base.BaseApplication;
 import hb.yetdaggersample.di.DaggerApplicationComponent;
 
 /**
@@ -15,7 +16,7 @@ import hb.yetdaggersample.di.DaggerApplicationComponent;
  *
  */
 
-public class YetDaggerSampleApplication extends Application implements HasActivityInjector {
+public class YetDaggerSampleApplication extends BaseApplication implements HasActivityInjector {
 
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;

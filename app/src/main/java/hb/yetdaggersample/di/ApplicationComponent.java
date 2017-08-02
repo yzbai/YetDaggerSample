@@ -5,7 +5,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
 import dagger.android.support.AndroidSupportInjectionModule;
-import hb.yetdaggersample.base.YetDaggerSampleApplication;
+import hb.yetdaggersample.YetDaggerSampleApplication;
 
 /**
  * Created by Yuzhao on 8/2/2017..
@@ -13,7 +13,7 @@ import hb.yetdaggersample.base.YetDaggerSampleApplication;
  */
 
 @Singleton
-@Component(modules = {AndroidInjectionModule.class, AndroidSupportInjectionModule.class, MainActivityModule.class})
+@Component(modules = {AndroidInjectionModule.class, AndroidSupportInjectionModule.class, ApplicationModule.class, MainActivityModule.class})
 public interface ApplicationComponent {
 
     void inject(YetDaggerSampleApplication application);
