@@ -16,22 +16,7 @@ import hb.yetdaggersample.di.DaggerApplicationComponent;
  *
  */
 
-public class YetDaggerSampleApplication extends BaseApplication implements HasActivityInjector {
+public class YetDaggerSampleApplication extends BaseApplication {
 
-    @Inject
-    DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
-        DaggerApplicationComponent.create().inject(this);
-
-    }
-
-    @Override
-    public AndroidInjector<Activity> activityInjector() {
-        return dispatchingAndroidInjector;
-    }
 }
 

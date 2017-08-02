@@ -1,4 +1,4 @@
-package hb.yetdaggersample.base;
+package com.brlite.app2lib.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

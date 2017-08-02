@@ -1,15 +1,16 @@
-package hb.yetdaggersample.base;
+package com.brlite.app2lib.base;
 
 
 import android.app.Activity;
 import android.app.Application;
+
+import com.brlite.app2lib.di.DaggerApplicationComponent;
 
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
-import hb.yetdaggersample.di.DaggerApplicationComponent;
 
 
 /**
@@ -17,7 +18,7 @@ import hb.yetdaggersample.di.DaggerApplicationComponent;
  *
  */
 
-public abstract class BaseApplication extends Application  implements HasActivityInjector {
+public abstract class BaseApplication extends Application implements HasActivityInjector {
 
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
