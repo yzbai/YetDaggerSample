@@ -8,8 +8,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.brlite.app4.R;
+import com.brlite.app4lib.base.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private TextView mTextMessage;
 

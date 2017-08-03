@@ -17,11 +17,9 @@ import dagger.android.support.AndroidSupportInjectionModule;
 
 @Singleton
 @Component(modules = {
-        AndroidInjectionModule.class,
-        AndroidSupportInjectionModule.class,
-        ApplicationModule.class,
-        ActivityModule.class})  // 所有的针对Activity, Fragment 的Module都写到这儿
-
+        AndroidSupportInjectionModule.class,    //Injector Map 容器
+        ApplicationModule.class,                //全局单例使用的类别
+        ActivityModule.class})                  // 所有的针对Activity, Fragment 的Module都写到这儿
 public interface ApplicationComponent {
 
     //对于特指android中的组件注入，只有这一句显示调用。用于注入Application中声明的 DispatchingAndroidInjector.

@@ -23,13 +23,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import com.brlite.app4lib.base.BaseApplication;
-
 import dagger.android.AndroidInjection;
 import dagger.android.support.AndroidSupportInjection;
-import dagger.android.support.HasSupportFragmentInjector;
 
 /**
- * Helper class to automatically inject fragments if they implement {@link Injectable}.
+ * Helper class to automatically inject fragments if they implement {@link InjectNeeded}.
  */
 public class InjectorHelper {
     private InjectorHelper() {}
@@ -76,9 +74,10 @@ public class InjectorHelper {
     }
 
     private static void injectActivity(Activity activity) {
-        if (activity instanceof HasSupportFragmentInjector) {
+        if (activity instanceof InjectNeeded) {
             AndroidInjection.inject(activity);
         }
+        //如果是FrameActivity, 注入Activity控制着的Fragment
         if (activity instanceof FragmentActivity) {
             ((FragmentActivity) activity).getSupportFragmentManager()
                     .registerFragmentLifecycleCallbacks(
@@ -86,7 +85,7 @@ public class InjectorHelper {
                                 @Override
                                 public void onFragmentCreated(FragmentManager fm, Fragment f,
                                                               Bundle savedInstanceState) {
-                                    if (f instanceof Injectable) {
+                                    if (f instanceof InjectNeeded) {
                                         AndroidSupportInjection.inject(f);
                                     }
                                 }

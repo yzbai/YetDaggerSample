@@ -32,9 +32,7 @@ public abstract class BaseApplication extends Application implements HasActivity
     @Override
     public void onCreate() {
         super.onCreate();
-
         InjectorHelper.init(this);
-
     }
 
     @Override

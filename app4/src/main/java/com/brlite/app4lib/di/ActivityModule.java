@@ -5,6 +5,8 @@ import com.brlite.app4.logic.UserBiz;
 import com.brlite.app4.ui.MainActivity;
 import com.brlite.app4.ui.SecondActivity;
 import com.brlite.app4.ui.ThirdActivity;
+import com.brlite.app4.ui.fragments.FirstFragment;
+import com.brlite.app4.ui.fragments.SecondFragment;
 
 import javax.inject.Singleton;
 
@@ -18,7 +20,7 @@ import dagger.android.ContributesAndroidInjector;
  */
 
 @Module
-public abstract class ActivityModule {
+abstract class ActivityModule {
 
     @ContributesAndroidInjector
     abstract MainActivity contributeMainActivity();
@@ -28,6 +30,12 @@ public abstract class ActivityModule {
 
     @ContributesAndroidInjector
     abstract ThirdActivity contributeThirdActivity();
+
+    @ContributesAndroidInjector
+    abstract FirstFragment contributeFirstFragment();
+
+    @ContributesAndroidInjector
+    abstract SecondFragment contributeSecondFragment();
 
     @Singleton
     @Provides
